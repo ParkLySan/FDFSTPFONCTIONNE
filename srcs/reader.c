@@ -6,11 +6,15 @@
 /*   By: litoulza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 17:48:29 by litoulza          #+#    #+#             */
-/*   Updated: 2018/06/27 16:24:01 by litoulza         ###   ########.fr       */
+/*   Updated: 2018/06/27 22:04:40 by litoulza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+/*
+** Those are the function who'll read the map before drawing.
+*/
 
 int			val_return(int y, int nb, int save)
 {
@@ -21,6 +25,11 @@ int			val_return(int y, int nb, int save)
 	else
 		return (-1);
 }
+
+/*
+** Here I'll check if all my lines are correct, if I can read them
+** and if I can draw them.
+*/
 
 int			check_line(char *str, int y, int save)
 {

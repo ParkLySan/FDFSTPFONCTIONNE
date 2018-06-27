@@ -6,11 +6,17 @@
 /*   By: litoulza <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/23 17:48:13 by litoulza          #+#    #+#             */
-/*   Updated: 2018/05/31 16:57:34 by litoulza         ###   ########.fr       */
+/*   Updated: 2018/06/27 22:00:57 by litoulza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+/*
+** So this is for the zoom, I basically configure key to incrase my 
+** values or to decrease them (z *= 2 is z = z * 2. Then multiply 
+** by 0.5 is divising by 2)
+*/
 
 void		zoom(int keycode, t_fdf *key)
 {
@@ -33,11 +39,19 @@ void		zoom(int keycode, t_fdf *key)
 	}
 }
 
+/*
+** This function make the program quit properly
+*/
+
 int			cross(void)
 {
 	exit(0);
 	return (0);
 }
+
+/*
+** This is for making our maps move upside down, to the rignt and to the left.
+*/
 
 void		decal(int keycode, t_fdf *key)
 {
@@ -57,6 +71,14 @@ void		decal(int keycode, t_fdf *key)
 		draw(key);
 	}
 }
+
+/*
+** This is our bonus. When u press esc it make us quit, 
+** with the '/' our z is getting bigger it means that our map rises.
+** With the '*' it's getting lower. With the C the col
+** or is changing from light blue to green. Then I call the
+** decal function and the zoom function.
+*/
 
 int			keyboard(int keycode, t_fdf *key)
 {
@@ -86,6 +108,11 @@ int			keyboard(int keycode, t_fdf *key)
 	decal(keycode, key);
 	return (0);
 }
+
+/*
+** This is the mlx function, 
+** it will create the window and call the draw function.
+*/
 
 void		mlx(t_fdf *key)
 {
